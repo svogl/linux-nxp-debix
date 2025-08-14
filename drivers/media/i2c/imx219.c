@@ -757,6 +757,18 @@ static int imx219_set_stream(struct v4l2_subdev *sd, int enable)
 	return ret;
 }
 
+static int imx219_link_setup(struct media_entity *entity,
+                          const struct media_pad *local,
+                          const struct media_pad *remote, u32 flags)
+{
+       return 0;
+}
+
+static const struct media_entity_operations imx219_sd_media_ops = {
+       .link_setup = imx219_link_setup,
+};
+
+
 static void imx219_update_pad_format(struct imx219 *imx219,
 				     const struct imx219_mode *mode,
 				     struct v4l2_mbus_framefmt *fmt, u32 code)
@@ -1169,6 +1181,7 @@ static int imx219_probe(struct i2c_client *client)
 	imx219->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE |
 			    V4L2_SUBDEV_FL_HAS_EVENTS;
 	imx219->sd.entity.function = MEDIA_ENT_F_CAM_SENSOR;
+        imx219->sd.entity.ops = &imx219_sd_media_ops;
 
 	/* Initialize source pad */
 	imx219->pad.flags = MEDIA_PAD_FL_SOURCE;
