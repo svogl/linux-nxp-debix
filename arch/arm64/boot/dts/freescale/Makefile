@@ -865,6 +865,8 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mp-evk.dtb \
 			imx8mp-debix-core-gc2145.dtb \
 			imx8mp-debix-core-ov5640.dtb \
 			imx8mp-debix-core-imx219.dtb \
+			imx8mp-debix-core-imx708.dtb \
+			imx8mp-debix-core-imx708.dtbo \
 			imx8mp-debix-core-ar1335.dtb \
 			imx8mp-debix-4g-board.dtb \
 			imx8mp-debix-io-TD050A.dtb \
