@@ -1586,7 +1586,7 @@
 				status = "disabled";
 
 				isi_0: isi@32e00000 {
-					compatible = "fsl,imx8mp-isi", "fsl,imx8mn-isi";
+					compatible = "nxp,imx8mp-isi", "fsl,imx8mn-isi";
 					reg = <0x32e00000 0x2000>;
 					interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
 					interface = <2 0 2>;

@@ -17,11 +17,13 @@
                 assigned-clock-parents = <&clk IMX8MP_CLK_24M>;
                 assigned-clock-rates = <24000000>;
                 csi_id = <0>;
-                reset-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+                reset-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
                 mipi_csi;
                 status = "okay";
                 port {
                         imx219_mipi_0_ep: endpoint {
+				nr-link-frequencies = <1>;
+				link-frequencies = <0 456000000>;
                                 ///delete-property/ remote-endpoint;
                                 remote-endpoint = <&mipi_csi0_ep>;
                                 data-lanes = <1 2>;
